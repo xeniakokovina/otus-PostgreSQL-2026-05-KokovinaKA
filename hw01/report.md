@@ -32,7 +32,7 @@
 ```bash
 lsb_release -a
 ```
-![]](images/03_ubuntu_installed.png)
+![](images/03_ubuntu_installed.png)
 
 ```md
 Дополнительно для удобства работы был установлен и настроен OpenSSH Server.

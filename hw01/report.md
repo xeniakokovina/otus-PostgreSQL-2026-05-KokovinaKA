@@ -2,7 +2,7 @@
 
 ## 1. Подготовка среды виртуализации
 
-На компьютере с Windows 11 Pro был включён компонент Hyper-V, необходимый для создания виртуальной машины. ![](hw01/images/01_hyper_v_enabled.png)
+На компьютере с Windows 11 Pro был включён компонент Hyper-V, необходимый для создания виртуальной машины. ![](images/01_hyper_v_enabled.png)
 
 ## 2. Загрузка образа операционной системы
 
@@ -10,7 +10,11 @@
 
 ## 3. Создание виртуальной машины
 
-В среде Hyper-V была создана виртуальная машина со следующими параметрами ![](hw01/images/02_virtual_machine_created.png):
+В среде Hyper-V была создана виртуальная машина
+
+![](images/02_virtual_machine_created.png)
+
+Параметры:
 
 - имя: Ubuntu-PostgreSQL;
 - поколение: 2;
@@ -28,7 +32,7 @@
 ```bash
 lsb_release -a
 ```
-![]](hw01/images/03_ubuntu_installed.png)
+![]](images/03_ubuntu_installed.png)
 
 ```md
 Дополнительно для удобства работы был установлен и настроен OpenSSH Server.
@@ -62,7 +66,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && r
 docker --version
 ```
 
-![](hw01/images/04_install_docker.png)
+![](images/04_install_docker.png)
 
 # 3. Создание каталога для хранения данных PostgreSQL
 
@@ -76,7 +80,7 @@ sudo mkdir -p /var/lib/postgresql
 ls -ld /var/lib/postgresql
 ```
 
-![](hw01/images/05_postgresql_directory.png)
+![](images/05_postgresql_directory.png)
 
 # 4. Разверните контейнер с PostgreSQL, смонтировав каталог хоста в каталог данных контейнера и пробросив порт 5432 для внешнего подключения;
 
@@ -123,7 +127,7 @@ docker run -d \
 docker ps
 ```
 
-![](hw01/images/06_postgres_container.png)
+![](images/06_postgres_container.png)
 
 # 5. Разверните контейнер с клиентом PostgreSQL (psql);
 
@@ -165,7 +169,7 @@ docker run -it --rm \
 
 После выполнения команды был запрошен пароль пользователя `postgres` и было установлено подключение к серверу PostgreSQL, о чём свидетельствует появление приглашения командной строки:
 
-![](hw01/images/07_psql_client_connection.png)
+![](images/07_psql_client_connection.png)
 
 
 # 6. Подключитесь из контейнера с клиентом к контейнеру с сервером; создайте таблицу orders_test и добавьте минимум 2 строки;
@@ -194,7 +198,7 @@ select * from orders_test;
 
 Результат:
 
-![](hw01/images/08_orders_test.png)
+![](images/08_orders_test.png)
 
 # 8. Подключитесь к PostgreSQL с ноутбука/рабочего компьютера извне хоста (по адресу хоста и порту 5432); выполните проверочный select из таблицы orders_test;
 
@@ -222,7 +226,7 @@ Connection attempt timed out.
 
 Соединение было успешно установлено:
 
-![](hw01/images/09_dbeaver_connection.png)
+![](images/09_dbeaver_connection.png)
 
 После подключения был выполнен проверочный SQL-запрос:
 
@@ -232,7 +236,7 @@ select * from orders_test;
 
 В результате были получены ранее добавленные записи:
 
-![](hw01/images/10_orders_test_select.png)
+![](images/10_orders_test_select.png)
 
 # 9. Остановите и удалите контейнер с сервером PostgreSQL;
 
@@ -248,7 +252,7 @@ docker stop postgres18
 docker ps -a
 ```
 
-![](hw01/images/11_docker_stop_remove.png)
+![](images/11_docker_stop_remove.png)
 
 # 10. Создайте контейнер с сервером заново, используя тот же смонтированный каталог данных;
 
@@ -270,7 +274,7 @@ docker run -d --rm \
 docker ps
 ```
 
-![](hw01/images/12_docker_run_again.png)
+![](images/12_docker_run_again.png)
 
 # 11. Подключитесь повторно из контейнера с клиентом и извне; проверьте, что строки в orders_test сохранились;
 
@@ -290,8 +294,8 @@ docker run -it --rm \
 select * from orders_test;
 ```
 
-![](hw01/images/13_client_select.png)
+![](images/13_client_select.png)
 
 Еще раз проверка из DBeaver с ноутбука:
 
-![](hw01/images/14_dbeaver_select.png)
+![](images/14_dbeaver_select.png)

@@ -68,7 +68,7 @@ docker --version
 
 ![](images/04_install_docker.png)
 
-# 3. Создание каталога для хранения данных PostgreSQL
+# 3. Создайте каталог для данных PostgreSQL на хосте: /var/lib/postgresql;
 
 ```bash
 sudo mkdir -p /var/lib/postgresql

@@ -6,7 +6,7 @@
 
 ## 2. Загрузка образа операционной системы
 
-С официального сайта Ubuntu (https://releases.ubuntu.com/24.04/) был загружен установочный ISO-образ Ubuntu 24.04 LTS - ![](ubuntu-24.04.4-desktop-amd64.iso)
+С официального сайта Ubuntu (https://releases.ubuntu.com/24.04/) был загружен установочный ISO-образ Ubuntu 24.04 LTS - ubuntu-24.04.4-desktop-amd64.iso
 
 ## 3. Создание виртуальной машины
 

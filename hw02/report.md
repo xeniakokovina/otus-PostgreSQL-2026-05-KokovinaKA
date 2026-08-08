@@ -1,6 +1,7 @@
 # 1. Создайте виртуальную машину с Ubuntu 22.04/24.04 LTS в ЯО/VirtualBox (или эквивалентный стенд с возможностью подключать диск);
 
 Уже создана, проверяю версию
+
 ![](images/01_check_ubuntu_vers.png)
 
 ```bash
@@ -8,11 +9,12 @@ lsb_release -a
 ```
 
 Подключаюсь со своего компьютера на Windows через ssh 
-![(images/02_login2vm.png)
+
+![](images/02_login2vm.png)
 
 # 2. Установите PostgreSQL через apt;
 
-Для установки PostgreSQL были обновлены списки пакетов и выполнена установка через менеджер пакетов `apt`:
+Для установки PostgreSQL были обновлены списки пакетов и выполнена установка через `apt`:
 
 ```bash
 sudo apt update
@@ -67,7 +69,7 @@ select * from test;
 Для остановки кластера PostgreSQL:
 
 ```bash
-sudo pg_ctlcluster <версия> main stop
+sudo pg_ctlcluster 16 main stop
 ```
 
 После остановки состояние кластера было проверено командой:
@@ -183,7 +185,7 @@ ls -ld /mnt/data
 Текущий каталог данных PostgreSQL был скопирован на новый диск с сохранением прав доступа:
 
 ```bash
-sudo rsync -av /var/lib/postgresql/<версия>/main /mnt/data/
+sudo rsync -av /var/lib/postgresql/16/main /mnt/data/
 ```
 
 Для проверки:

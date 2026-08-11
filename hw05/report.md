@@ -3,14 +3,6 @@
 
 Для выполнения работы использую PostgreSQL 18 и pgAdmin. Открываю две независимые сессии Query Tool для работы с транзакциями.
 
-Проверяю, что используются разные соединения:
-
-```sql
-select pg_backend_pid();
-```
-
-Транзакциями управляю вручную с помощью `BEGIN`, `COMMIT` и `ROLLBACK`.
-
 ![](images/01_sessions.png)
 
 # 2. Создайте таблицу orders(id serial, created_at timestamptz, amount numeric) и вставьте 2–3 записи;

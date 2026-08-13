@@ -24,7 +24,7 @@ lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS
 sudo -u postgres psql -c "select version();"
 ```
 
-В результате используется кластер PostgreSQL 18.4.
+В результате используется кластер PostgreSQL 18.4
 
 ![](images/01_vm.png)
 

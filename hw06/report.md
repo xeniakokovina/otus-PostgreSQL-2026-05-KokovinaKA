@@ -24,8 +24,6 @@ lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS
 sudo -u postgres psql -c "select version();"
 ```
 
-В результате используется кластер PostgreSQL 18.4
-
 ![](images/01_vm.png)
 
 ## 2. Подготовьте тестовую базу pgbench (pgbench -i postgres) и выполните прогон нагрузки (pgbench -c8 -P 6 -T 60 -U postgres postgres);
@@ -71,10 +69,6 @@ order by relname;
 ![](images/03_pg_stat.png)
 
 ## 4. Создайте таблицу с текстовым полем и заполните её 1 000 000 строк (допускается генерация через generate_series);
-
-Да, всё правильно: count = 1000000. Для отчёта коротко:
-
-## 4. Создание тестовой таблицы
 
 Создаю таблицу с текстовым полем:
 

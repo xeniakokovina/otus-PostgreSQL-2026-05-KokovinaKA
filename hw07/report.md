@@ -1,12 +1,12 @@
 ## 1. Используйте стенд с PostgreSQL 17 (допускается ВМ из предыдущих ДЗ) и установите pgbench;
-спользую существующую ВМ с PostgreSQL 18.4.
+Использую существующую ВМ с PostgreSQL 18.4.
 
 ```bash
 pg_lsclusters
 sudo -u postgres psql -c "select version();"
 ```
 
-Кластер PostgreSQL 18 запущен на порту `5432`.
+Кластер PostgreSQL 18 запущен на порту `5432`
 
 ![](images/01_cluster.png)
 

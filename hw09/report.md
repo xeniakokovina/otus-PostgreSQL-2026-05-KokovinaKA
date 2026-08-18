@@ -82,7 +82,7 @@ left join rental r
 order by c.customer_id, r.rental_date;
 ```
 
-В плане выполнения PostgreSQL преобразовал соединение в эквивалентный `Hash Right Join`. Таблицы читаются через `Seq Scan`, так как запрос обрабатывает практически все строки.
+В плане выполнения PostgreSQL преобразовал соединение в `Hash Right Join`. Таблицы читаются через `Seq Scan`, так как запрос обрабатывает практически все строки.
 
 ![](images/03_left_join.png)
 

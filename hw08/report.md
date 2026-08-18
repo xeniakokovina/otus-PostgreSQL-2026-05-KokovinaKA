@@ -74,7 +74,7 @@ process 4379 still waiting for ShareLock on transaction 6165744 after 200.108 ms
 
 ## 3. Откройте три сессии psql к одной базе данных;
 
-Открываю три независимые сессии `psql` к базе `locks_test`.
+Открываю 3 сессии `psql` к базе `locks_test`.
 
 В каждой сессии проверяю идентификатор процесса:
 
@@ -82,7 +82,7 @@ process 4379 still waiting for ShareLock on transaction 6165744 after 200.108 ms
 select pg_backend_pid();
 ```
 
-![]](images/03_open_sessions.png)
+![](images/03_open_sessions.png)
 
 ## 4. Создайте тестовую таблицу и добавьте одну строку, которую будут обновлять все сессии;
 
